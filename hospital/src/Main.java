@@ -5,20 +5,32 @@ public class Main {
     public static void main(String[] args) {
         ColaConPrioridad cola = new ColaConPrioridad();
 
-        cola.agregar(5);
-        cola.agregar(7);
-        cola.agregar(15);
-        cola.agregar(14);
-        cola.agregar(9);
-        cola.agregar(18);
-        cola.agregar(6);
-        cola.agregar(1);
-        cola.agregar(13);
-        cola.agregar(7);
+        Afeccion afeccion1 = new Afeccion(Prioridad.RESUCITAR);
+        Afeccion afeccion2 = new Afeccion(Prioridad.EMERGENCIA);
+        Afeccion afeccion3 = new Afeccion(Prioridad.URGENCIA);
+        Afeccion afeccion4 = new Afeccion(Prioridad.POCA_URGENCIA);
+        Afeccion afeccion5 = new Afeccion(Prioridad.SIN_URGENCIA);
+
+
+        Paciente paciente1 = new Paciente(123456789, afeccion1);
+        Paciente paciente2 = new Paciente(987654321, afeccion2);
+        Paciente paciente3 = new Paciente(555555555, afeccion3);
+        Paciente mati = new Paciente(4264917, afeccion4);
+        Paciente paciente5 = new Paciente(57657567, afeccion5);
+        Paciente mottu = new Paciente(41898101, afeccion2);
+        Paciente fede = new Paciente(43818997, afeccion3);
+
+        cola.agregar(paciente1);
+        cola.agregar(paciente2);
+        cola.agregar(paciente3);
+        cola.agregar(mati);
+        cola.agregar(paciente5);
+        cola.agregar(mottu);
+        cola.agregar(fede);
 
         System.out.println(Arrays.toString(cola.getLista()));
 
-        int elemento = cola.desencolar();
+        Paciente elemento = cola.desencolar();
 
         System.out.println(elemento);
         System.out.println(Arrays.toString(cola.getLista()));
