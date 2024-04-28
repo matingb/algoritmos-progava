@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
 
@@ -18,14 +17,10 @@ public class Main {
         cola.agregar(7);
 
         System.out.println(Arrays.toString(cola.getLista()));
-    }
 
-    private static int remover(List<Integer> lista) {
-        int masPrioritario = lista.getFirst();
+        int elemento = cola.desencolar();
 
-        lista.set(0,lista.getLast());
-        lista.removeLast();
-
-        return masPrioritario;
+        System.out.println(elemento);
+        System.out.println(Arrays.toString(cola.getLista()));
     }
 }
