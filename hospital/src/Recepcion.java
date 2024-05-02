@@ -111,8 +111,8 @@ public class Recepcion {
             return;
         }
 
-        int posicionRaizDerecho = posicionRaiz * 2 + 1;
-        boolean noHayHijoDerecho = posicionRaizDerecho >= tope;
+        int posicionHijoDerecho = posicionRaiz * 2 + 1;
+        boolean noHayHijoDerecho = posicionHijoDerecho >= tope;
         if (noHayHijoDerecho) {
             if (lista[posicionHijoIzquierdo].compareTo(lista[posicionRaiz]) < 0) {
                 intercambiar(posicionRaiz, posicionHijoIzquierdo);
@@ -121,18 +121,18 @@ public class Recepcion {
             return;
         }
 
-        Paciente hijoMenor = lista[posicionHijoIzquierdo].compareTo(lista[posicionRaizDerecho]) > 0 ? lista[posicionHijoIzquierdo] : lista[posicionRaizDerecho];
-        int posicionMenor = lista[posicionHijoIzquierdo] == hijoMenor ? posicionHijoIzquierdo : posicionRaizDerecho;
+        Paciente hijoMenor = lista[posicionHijoIzquierdo].compareTo(lista[posicionHijoDerecho]) > 0 ? lista[posicionHijoDerecho] : lista[posicionHijoIzquierdo] ;
+        int posicionMenor = lista[posicionHijoIzquierdo] == hijoMenor ? posicionHijoIzquierdo : posicionHijoDerecho;
         if (hijoMenor.compareTo(lista[posicionRaiz]) < 0) {
             intercambiar(posicionRaiz, posicionMenor);
             acomodarRaiz(posicionHijoIzquierdo);
         }
     }
 
-    private void intercambiar(int posicionRaiz, int posicionHijoIzquierdo) {
+    private void intercambiar(int posicionRaiz, int posicionHijo) {
         Paciente aux = lista[posicionRaiz];
-        lista[posicionRaiz] = lista[posicionHijoIzquierdo];
-        lista[posicionHijoIzquierdo] = aux;
+        lista[posicionRaiz] = lista[posicionHijo];
+        lista[posicionHijo] = aux;
     }
 
     public Paciente[] getLista() {
