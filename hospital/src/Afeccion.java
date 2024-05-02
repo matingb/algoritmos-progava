@@ -10,7 +10,8 @@ public class Afeccion {
         this.nombre = nombre;
     }
 
-    public Afeccion(Prioridad prioridad) {
+    public Afeccion(String nombre, Prioridad prioridad) {
+        this.nombre = nombre;
         this.prioridad = prioridad;
     }
 
@@ -21,7 +22,8 @@ public class Afeccion {
     @Override
     public String toString() {
         return "Afeccion{" +
-                "prioridad=" + prioridad +
+                "nombre= " + nombre +
+                "prioridad= " + prioridad +
                 '}';
     }
 }
