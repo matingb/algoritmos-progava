@@ -1,8 +1,8 @@
-public class ColaConPrioridad {
+public class Recepcion {
     private int tope = 1;
     private final Paciente[] lista = new Paciente[15];
 
-    public void agregar(Paciente elementoNuevo) {
+    public void recepcionarPaciente(Paciente elementoNuevo) {
         int posicionNuevo = tope;
         int padre = posicionNuevo / 2;
         Paciente elementoAComparar = lista[padre];
@@ -18,7 +18,7 @@ public class ColaConPrioridad {
         tope++;
     }
 
-    public Paciente desencolar() {
+    public Paciente llamarPaciente() {
         if (tope == 1) {
             return null;
         }

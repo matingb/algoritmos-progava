@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        ColaConPrioridad cola = new ColaConPrioridad();
+        Recepcion cola = new Recepcion();
 
         Afeccion afeccion1 = new Afeccion(Prioridad.RESUCITAR);
         Afeccion afeccion2 = new Afeccion(Prioridad.EMERGENCIA);
@@ -20,17 +20,17 @@ public class Main {
         Paciente mottu = new Paciente(41898101, afeccion2);
         Paciente fede = new Paciente(43818997, afeccion3);
 
-        cola.agregar(paciente1);
-        cola.agregar(paciente2);
-        cola.agregar(paciente3);
-        cola.agregar(mati);
-        cola.agregar(paciente5);
-        cola.agregar(mottu);
-        cola.agregar(fede);
+        cola.recepcionarPaciente(paciente1);
+        cola.recepcionarPaciente(paciente2);
+        cola.recepcionarPaciente(paciente3);
+        cola.recepcionarPaciente(mati);
+        cola.recepcionarPaciente(paciente5);
+        cola.recepcionarPaciente(mottu);
+        cola.recepcionarPaciente(fede);
 
         System.out.println(Arrays.toString(cola.getLista()));
 
-        Paciente elemento = cola.desencolar();
+        Paciente elemento = cola.siguentePaciente();
 
         System.out.println(elemento);
         System.out.println(Arrays.toString(cola.getLista()));
