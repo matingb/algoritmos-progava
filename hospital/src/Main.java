@@ -11,7 +11,6 @@ public class Main {
         Afeccion afeccion4 = new Afeccion(Prioridad.POCA_URGENCIA);
         Afeccion afeccion5 = new Afeccion(Prioridad.SIN_URGENCIA);
 
-
         Paciente paciente1 = new Paciente(123456789, afeccion1);
         Paciente paciente2 = new Paciente(987654321, afeccion2);
         Paciente paciente3 = new Paciente(555555555, afeccion3);
