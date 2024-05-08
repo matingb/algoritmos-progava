@@ -3,35 +3,46 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        ColaConPrioridad cola = new ColaConPrioridad();
+        Recepcion recepcion = new Recepcion();
 
-        Afeccion afeccion1 = new Afeccion(Prioridad.RESUCITAR);
-        Afeccion afeccion2 = new Afeccion(Prioridad.EMERGENCIA);
-        Afeccion afeccion3 = new Afeccion(Prioridad.URGENCIA);
-        Afeccion afeccion4 = new Afeccion(Prioridad.POCA_URGENCIA);
-        Afeccion afeccion5 = new Afeccion(Prioridad.SIN_URGENCIA);
+        Afeccion paroCardiaco = new Afeccion("Paro Cardiaco",Prioridad.RESUCITAR);
+        Afeccion convulsionar = new Afeccion("Convulsionar",Prioridad.EMERGENCIA);
+        Afeccion traumatismoDeCraneo = new Afeccion("Traumatismo de craneo",Prioridad.URGENCIA);
+        Afeccion fiebre = new Afeccion("Fiebre",Prioridad.POCA_URGENCIA);
+        Afeccion dolorDeGarganta = new Afeccion("Dolor de garganta",Prioridad.SIN_URGENCIA);
 
-        Paciente paciente1 = new Paciente(123456789, afeccion1);
-        Paciente paciente2 = new Paciente(987654321, afeccion2);
-        Paciente paciente3 = new Paciente(555555555, afeccion3);
-        Paciente mati = new Paciente(4264917, afeccion4);
-        Paciente paciente5 = new Paciente(57657567, afeccion5);
-        Paciente mottu = new Paciente(41898101, afeccion2);
-        Paciente fede = new Paciente(43818997, afeccion3);
+        Paciente ezequiel = new Paciente(123456789, paroCardiaco,121);
+        Paciente federico = new Paciente(987654321, convulsionar,33333);
+        Paciente brenda = new Paciente(555555555, traumatismoDeCraneo,11111);
+        Paciente matias = new Paciente(4264917, fiebre,34234);
+        Paciente agostina = new Paciente(57657567, dolorDeGarganta,5435345);
+        Paciente francisco = new Paciente(41898101, convulsionar,95856);
+        Paciente miguel = new Paciente(43818997, traumatismoDeCraneo, 53423);
 
-        cola.agregar(paciente1);
-        cola.agregar(paciente2);
-        cola.agregar(paciente3);
-        cola.agregar(mati);
-        cola.agregar(paciente5);
-        cola.agregar(mottu);
-        cola.agregar(fede);
+        recepcion.recepcionarPaciente(ezequiel); //cola.encolar(ezequiel)
+        recepcion.recepcionarPaciente(federico);
+        recepcion.recepcionarPaciente(brenda);
+        recepcion.recepcionarPaciente(matias);
+        recepcion.recepcionarPaciente(agostina);
+        recepcion.recepcionarPaciente(francisco);
+        recepcion.recepcionarPaciente(miguel);
 
-        System.out.println(Arrays.toString(cola.getLista()));
+        System.out.println(Arrays.toString(recepcion.getLista()));
 
-        Paciente elemento = cola.desencolar();
+        Paciente pacienteMayorPrioridad = recepcion.llamarPaciente();
+        System.out.println("\nEl paciente con mayor prioridad es:");
+        System.out.println(pacienteMayorPrioridad);
+        System.out.println(Arrays.toString(recepcion.getLista()));
 
-        System.out.println(elemento);
-        System.out.println(Arrays.toString(cola.getLista()));
+        Paciente pacientePrioridad2 = recepcion.llamarPaciente();
+        System.out.println("\nEl 2do paciente con mayor prioridad es:");
+        System.out.println(pacientePrioridad2);
+        System.out.println(Arrays.toString(recepcion.getLista()));
+
+        Paciente pacientePrioridad3 = recepcion.llamarPaciente();
+        System.out.println("\nEl 3ro paciente con mayor prioridad es:");
+        System.out.println(pacientePrioridad3);
+        System.out.println(Arrays.toString(recepcion.getLista()));
+
     }
 }

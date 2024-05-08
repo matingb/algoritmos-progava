@@ -4,8 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/construyendo-casa/construyendo-casa.iml" filepath="$PROJECT_DIR$/construyendo-casa/construyendo-casa.iml" />
       <module fileurl="file://$PROJECT_DIR$/hospital/hospital.iml" filepath="$PROJECT_DIR$/hospital/hospital.iml" />
-      <module fileurl="file://$PROJECT_DIR$/algoritmos/algoritmos.iml" filepath="$PROJECT_DIR$/algoritmos/algoritmos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/tp.iml" filepath="$PROJECT_DIR$/.idea/tp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tp-progra-avanzada.iml" filepath="$PROJECT_DIR$/.idea/tp-progra-avanzada.iml" />
     </modules>
   </component>
 </project>
