@@ -5,10 +5,10 @@ import java.util.PriorityQueue;
 
 public class Prim {
 
-	public static int calcularCostoMinimo(int[][] m) {
+	public static ArrayList<Arista> calcularArbolMinimo(int[][] m) {
 		PriorityQueue<Arista> colaPrioridad = new PriorityQueue<>();
 
-		int costoMin = 0;
+		ArrayList<Arista> conjuntoAristasSolucion = new ArrayList<Arista>(m.length);
 
 		ArrayList<Integer> conjuntoSolucion = new ArrayList<Integer>(m.length);
 		ArrayList<Integer> conjuntoInicial = new ArrayList<Integer>(m.length);
@@ -45,51 +45,12 @@ public class Prim {
 				conjuntoSolucion.add(aristaMinima.fin);
 			}
 
-			costoMin += aristaMinima.costo;
+			conjuntoAristasSolucion.add(aristaMinima);
 			nodoAnalizado = nuevoNodo;
 
 			conjuntoInicial.remove(conjuntoInicial.indexOf(nuevoNodo));
 		}
 
-		return costoMin;
+		return conjuntoAristasSolucion;
 	}
 }
-/*
-	public static Grafo getArbolAbarcador(Grafo g) {
-
-		Grafo abarcador = new MatrizGrafo(g.getNodos());
-		ArrayList<Integer> solucion = new ArrayList<Integer>(g.getNodos());
-		ArrayList<Integer> v = new ArrayList<Integer>(solucion.size());
-
-		for (int i = 0; i < g.getNodos(); i++) {
-			v.add(i + 1);
-		}
-
-		solucion.add(v.get(0));
-		v.removeAll(solucion);
-
-		while (solucion.size() < g.getNodos() && !v.isEmpty()) { // trabajar con un vector visitados y no visitados.
-
-			int menorPeso = Grafo.INFINITO;
-			Integer nodoAAgregar = 0;
-			Integer nodoSaliente = 0;
-
-			for (Integer saliente : solucion) {
-				for (Integer entrante : v) {
-					if (g.getVinculo(entrante, saliente) < menorPeso) {
-						menorPeso = g.getVinculo(entrante, saliente);
-						nodoAAgregar = entrante;
-						nodoSaliente = saliente;
-					}
-				}
-			}
-
-			abarcador.setVinculo(nodoSaliente, nodoAAgregar, menorPeso);
-			solucion.add(nodoAAgregar);
-			v.remove(nodoAAgregar);
-		}
-
-		return abarcador;
-	}
-}
-*/
