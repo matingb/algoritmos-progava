@@ -1,14 +1,9 @@
 import DivisionYConquista.Sumar;
-import Grafos.Floyd;
-import Grafos.Infinito;
-import Grafos.Prim;
-import Grafos.Arista;
-import Grafos.Matriz;
+import Grafos.*;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import Grafos.ColoreoSecuencial;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,13 +34,20 @@ public class Main {
         Matriz.imprimirMatriz(matrizFloyd);
         */
 
-        int[][] grafo_para_colorear = { {0, 1, 0, 0},
+        int[][] grafo_para_dfs = {
+                {0, 1, 0, 0},
+                {1, 0, 1, 0},
+                {0, 1, 0, 1},
+                {0, 0, 1, 0}};
+        DFS.calcular(grafo_para_dfs, 2, nodo -> System.out.println("Nodo visitado: " + nodo));
+
+        /*int[][] grafo_para_colorear = { {0, 1, 0, 0},
                                         {1, 0, 1, 0},
                                         {0, 1, 0, 1},
                                         {0, 0, 1, 0}};
 
         int[] coloreo = ColoreoSecuencial.colorear(grafo_para_colorear);
-        System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));
+        System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));*/
 
     }
 

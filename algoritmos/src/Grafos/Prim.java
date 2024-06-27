@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 public class Prim {
 
-	public static ArrayList<Arista> calcularArbolMinimo(int[][] m) {
+	/*public static ArrayList<Arista> calcularArbolMinimo(int[][] m) {
 		PriorityQueue<Arista> colaPrioridad = new PriorityQueue<>();
 
 		ArrayList<Arista> conjuntoAristasSolucion = new ArrayList<Arista>(m.length);
@@ -52,5 +52,5 @@ public class Prim {
 		}
 
 		return conjuntoAristasSolucion;
-	}
+	}*/
 }
