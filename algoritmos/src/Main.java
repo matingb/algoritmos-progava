@@ -4,8 +4,11 @@ import Grafos.Infinito;
 import Grafos.Prim;
 import Grafos.Arista;
 import Grafos.Matriz;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import Grafos.ColoreoSecuencial;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,6 +38,14 @@ public class Main {
         System.out.println("La matriz de costos minimos obtenida por Floyd es: \n");
         Matriz.imprimirMatriz(matrizFloyd);
         */
+
+        int[][] grafo_para_colorear = { {0, 1, 0, 0},
+                                        {1, 0, 1, 0},
+                                        {0, 1, 0, 1},
+                                        {0, 0, 1, 0}};
+
+        int[] coloreo = ColoreoSecuencial.colorear(grafo_para_colorear);
+        System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));
 
     }
 
