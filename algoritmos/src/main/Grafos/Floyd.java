@@ -1,6 +1,4 @@
-package Grafos;
-
-import java.util.Arrays;
+package main.Grafos;
 
 public class Floyd {
 
@@ -20,7 +18,7 @@ public class Floyd {
 			for (int i = 0; i < cantNodos; i++) {
 				for (int j = 0; j < cantNodos; j++) {
 					if ( i != k && j != k && i != j){
-						if(FloydAnterior[i][k] != Grafos.Infinito.INFINITO && FloydAnterior[k][j] != Grafos.Infinito.INFINITO &&
+						if(FloydAnterior[i][k] != Infinito.INFINITO && FloydAnterior[k][j] != Infinito.INFINITO &&
 								FloydActual[i][j] > FloydAnterior[i][k] + FloydAnterior[k][j]){
 							FloydActual[i][j] = FloydAnterior[i][k] + FloydAnterior[k][j];
 					}
