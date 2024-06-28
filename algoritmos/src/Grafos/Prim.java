@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 public class Prim {
 
-	/*public static ArrayList<Arista> calcularArbolMinimo(int[][] m) {
+	public static ArrayList<Arista> calcularArbolMinimo(int[][] m) {
 		PriorityQueue<Arista> colaPrioridad = new PriorityQueue<>();
 
 		ArrayList<Arista> conjuntoAristasSolucion = new ArrayList<Arista>(m.length);
@@ -18,8 +18,8 @@ public class Prim {
 
 		}
 
-		int nodoAnalizado = conjuntoInicial.getFirst();
-		conjuntoSolucion.add(conjuntoInicial.getFirst()); // agrego el primer elemento al conjunto solucion
+		int nodoAnalizado = conjuntoInicial.get(0);
+		conjuntoSolucion.add(conjuntoInicial.get(0)); // agrego el primer elemento al conjunto solucion
 
 		conjuntoInicial.removeAll(conjuntoSolucion); // saco del conjunto inicial todo lo del conjunto solucion
 
@@ -52,5 +52,5 @@ public class Prim {
 		}
 
 		return conjuntoAristasSolucion;
-	}*/
+	}
 }

@@ -34,20 +34,21 @@ public class Main {
         Matriz.imprimirMatriz(matrizFloyd);
         */
 
-        int[][] grafo_para_dfs = {
+/*        int[][] grafo_para_dfs = {
                 {0, 1, 0, 0},
                 {1, 0, 1, 0},
                 {0, 1, 0, 1},
                 {0, 0, 1, 0}};
-        DFS.calcular(grafo_para_dfs, 2, nodo -> System.out.println("Nodo visitado: " + nodo));
+        DFS.calcular(grafo_para_dfs, 2, nodo -> System.out.println("Nodo visitado: " + nodo));*/
 
-        /*int[][] grafo_para_colorear = { {0, 1, 0, 0},
-                                        {1, 0, 1, 0},
-                                        {0, 1, 0, 1},
-                                        {0, 0, 1, 0}};
+        int[][] grafo_para_colorear = { {0, 1, 0, 0, 0},
+                                        {1, 0, 1, 0, 0},
+                                        {0, 1, 0, 1, 0},
+                                        {0, 0, 1, 0, 1},
+                                        {0, 0, 0, 1, 0}};
 
         int[] coloreo = ColoreoSecuencial.colorear(grafo_para_colorear);
-        System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));*/
+        System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));
 
     }
 
