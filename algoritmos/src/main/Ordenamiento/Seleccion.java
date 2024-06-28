@@ -1,4 +1,4 @@
-package Ordenamiento;
+package main.Ordenamiento;
 
 public class Seleccion {
 

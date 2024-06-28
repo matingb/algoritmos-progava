@@ -1,8 +1,8 @@
-import DivisionYConquista.Sumar;
-import Grafos.*;
+package main;
 
-import java.awt.*;
-import java.util.ArrayList;
+import main.Grafos.Infinito;
+import main.Ordenamiento.QuickSort;
+
 import java.util.Arrays;
 
 public class Main {
@@ -15,10 +15,10 @@ public class Main {
         Sumar sumar = new Sumar();
         sumar.calcular(elementos);*/
 
-        int[][] grafo_ponderado = {{Grafos.Infinito.INFINITO, 3, 5, Grafos.Infinito.INFINITO},
-                {Grafos.Infinito.INFINITO, Grafos.Infinito.INFINITO, 1, 4},
-                {9, 5, Grafos.Infinito.INFINITO, Grafos.Infinito.INFINITO},
-                {3, Grafos.Infinito.INFINITO, Grafos.Infinito.INFINITO, Grafos.Infinito.INFINITO}};
+        int[][] grafo_ponderado = {{Infinito.INFINITO, 3, 5, Infinito.INFINITO},
+                {Infinito.INFINITO, Infinito.INFINITO, 1, 4},
+                {9, 5, Infinito.INFINITO, Infinito.INFINITO},
+                {3, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO}};
 
         /*
             // Ejecucion Prim
@@ -34,7 +34,11 @@ public class Main {
         Matriz.imprimirMatriz(matrizFloyd);
         */
 
+<<<<<<< HEAD:algoritmos/src/Main.java
 /*        int[][] grafo_para_dfs = {
+=======
+        /*int[][] grafo_para_dfs = {
+>>>>>>> bf45a087a5c9a07a991f6430b754e626db1d73e7:algoritmos/src/main/Main.java
                 {0, 1, 0, 0},
                 {1, 0, 1, 0},
                 {0, 1, 0, 1},

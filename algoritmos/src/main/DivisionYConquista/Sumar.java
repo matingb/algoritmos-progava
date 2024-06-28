@@ -1,4 +1,4 @@
-package DivisionYConquista;
+package main.DivisionYConquista;
 
 public class Sumar {
     public void calcular(int[] lista) {

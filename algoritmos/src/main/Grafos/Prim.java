@@ -1,7 +1,4 @@
-package Grafos;
-
-import java.util.ArrayList;
-import java.util.PriorityQueue;
+package main.Grafos;
 
 public class Prim {
 

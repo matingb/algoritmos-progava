@@ -1,10 +1,8 @@
-package Grafos;
+package main.Grafos;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-
-import Grafos.Infinito;
 
 public class ColoreoSecuencial {
 
