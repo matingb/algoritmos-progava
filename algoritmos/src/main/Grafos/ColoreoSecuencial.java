@@ -20,25 +20,25 @@ public class ColoreoSecuencial {
 		
 		Collections.shuffle(listaNodos); // Mezclo los nodos aleatoriament
 		
-		for(int iteradorNodos = 0; iteradorNodos < listaNodos.size(); iteradorNodos++) {
-			int nodoPintar = listaNodos.get(iteradorNodos);
+		for(int iteradorNodos = 0; iteradorNodos < listaNodos.size(); iteradorNodos++) { // Itero sobre los nodos
+			int nodoPintar = listaNodos.get(iteradorNodos);	// Selecciono un nodo de la lista ordenada aleatoriamente
 			
-			int color = 0;
+			int color = 0;	// Colores que irán utilizando para colorear
 			int ultimoNodoPintado = iteradorNodos -1;
 			
 			int iteradorNodoPintado = 0;
-			while (iteradorNodoPintado <= ultimoNodoPintado) {
+			while (iteradorNodoPintado <= ultimoNodoPintado) {	// Itero sobre los nodos pintados
 				
 				int nodoPintado = listaNodos.get(iteradorNodoPintado);
 				
-				if(m[nodoPintar][nodoPintado] != 0 && coloreoNodos[nodoPintado] == color) {
+				if(m[nodoPintar][nodoPintado] != 0 && coloreoNodos[nodoPintado] == color) {	// Verifico si son compatibles
 					color++;
 					iteradorNodoPintado = -1;
 				}
 				
 				iteradorNodoPintado++;
 			}
-			coloreoNodos[nodoPintar] = color;
+			coloreoNodos[nodoPintar] = color;	// Pinto el nodo
 		}
 		
 		return coloreoNodos;

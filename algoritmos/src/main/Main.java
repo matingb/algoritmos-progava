@@ -3,6 +3,8 @@ package main;
 import main.Grafos.BFS;
 import main.Grafos.Infinito;
 import main.Ordenamiento.QuickSort;
+import main.Grafos.ColoreoSecuencial;
+import main.Grafos.ColoreoWelshPowell;
 
 import java.util.Arrays;
 
@@ -22,6 +24,8 @@ public class Main {
                 {3, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO}};
 */
     	
+    	
+    	/*
     	//Ejecución BFS
     	
     	int[][] grafo = {
@@ -40,7 +44,7 @@ public class Main {
     	for(int i=0; i < grafo.length; i++) {
     		System.out.println(d[i] + " ");
     	}
-    	
+    	*/
         
         
         
@@ -70,15 +74,18 @@ public class Main {
                 {0, 0, 1, 0}};
         DFS.calcular(grafo_para_dfs, 2, nodo -> System.out.println("Nodo visitado: " + nodo));*/
 
-        /*
-        int[][] grafo_para_colorear = { {0, 1, 0, 0, 0},
+        
+        int[][] grafo_para_colorear = { {0, 1, 1, 0, 0},
                                         {1, 0, 1, 0, 0},
-                                        {0, 1, 0, 1, 0},
+                                        {1, 1, 0, 1, 0},
                                         {0, 0, 1, 0, 1},
                                         {0, 0, 0, 1, 0}};
-
+        /*
         int[] coloreo = ColoreoSecuencial.colorear(grafo_para_colorear);
         System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));*/
+        
+        int[] coloreo = ColoreoWelshPowell.colorear(grafo_para_colorear);
+        System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));
 
     }
 

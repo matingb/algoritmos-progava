@@ -1,5 +1,8 @@
 package main.Grafos;
 
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+
 public class Prim {
 
 	public static ArrayList<Arista> calcularArbolMinimo(int[][] m) {
