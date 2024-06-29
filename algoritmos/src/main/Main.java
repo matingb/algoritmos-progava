@@ -1,5 +1,6 @@
 package main;
 
+import main.Grafos.BFS;
 import main.Grafos.Infinito;
 import main.Ordenamiento.QuickSort;
 
@@ -14,12 +15,36 @@ public class Main {
 
         Sumar sumar = new Sumar();
         sumar.calcular(elementos);*/
-
+    	/*
         int[][] grafo_ponderado = {{Infinito.INFINITO, 3, 5, Infinito.INFINITO},
                 {Infinito.INFINITO, Infinito.INFINITO, 1, 4},
                 {9, 5, Infinito.INFINITO, Infinito.INFINITO},
                 {3, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO}};
+*/
+    	
+    	//Ejecución BFS
+    	
+    	int[][] grafo = {
+                {Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO},
+                {1, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO},
+                {Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, 1, Infinito.INFINITO},
+                {Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO},
+                {Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO},
+                {1, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO},
+                {Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO}
+            };
 
+ 
+    	int[] d= BFS.bfs(grafo, 0);
+    	
+    	for(int i=0; i < grafo.length; i++) {
+    		System.out.println(d[i] + " ");
+    	}
+    	
+        
+        
+        
+        
         /*
             // Ejecucion Prim
         ArrayList<Arista> arbolCostoMinimo = Prim.calcularArbolMinimo(grafo_ponderado);
@@ -34,7 +59,7 @@ public class Main {
         Matriz.imprimirMatriz(matrizFloyd);
         */
 
-<<<<<<< HEAD:algoritmos/src/Main.java
+//<<<<<<< HEAD:algoritmos/src/Main.java
 /*        int[][] grafo_para_dfs = {
 =======
         /*int[][] grafo_para_dfs = {
@@ -45,6 +70,7 @@ public class Main {
                 {0, 0, 1, 0}};
         DFS.calcular(grafo_para_dfs, 2, nodo -> System.out.println("Nodo visitado: " + nodo));*/
 
+        /*
         int[][] grafo_para_colorear = { {0, 1, 0, 0, 0},
                                         {1, 0, 1, 0, 0},
                                         {0, 1, 0, 1, 0},
@@ -52,7 +78,7 @@ public class Main {
                                         {0, 0, 0, 1, 0}};
 
         int[] coloreo = ColoreoSecuencial.colorear(grafo_para_colorear);
-        System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));
+        System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));*/
 
     }
 
