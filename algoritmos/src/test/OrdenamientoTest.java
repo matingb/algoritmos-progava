@@ -1,6 +1,7 @@
 package test;
 
 import main.Ordenamiento.Burbujeo;
+import main.Ordenamiento.MergeSort;
 import main.Ordenamiento.QuickSort;
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,5 +26,13 @@ public class OrdenamientoTest {
         quickSort.ordenar(vector, 0, vector.length - 1);
 
         Assert.assertArrayEquals(vector, new int[]{-5, -4, 1, 2, 5, 6, 8, 9, 15});
+    }
+
+    @Test
+    public void mergeSort(){
+        int [] lista = {38,23,54,99,10,8,34};
+        MergeSort mergeSort = new MergeSort();
+        mergeSort.ordenar(lista);
+        Assert.assertArrayEquals(lista, new int[]{8, 10, 23, 34, 38, 54, 99});
     }
 }
