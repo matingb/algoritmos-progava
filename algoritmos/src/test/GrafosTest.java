@@ -63,4 +63,19 @@ public class GrafosTest {
 
         Assert.assertArrayEquals(d, new int[]{0, 1, 2, 2, 1, 3, Infinito.INFINITO });
     }
+
+    @Test
+    public void ColoreoSecuencial() {
+
+        int[][] grafo_para_colorear = { {0, 1, 1, 0, 0},
+                {1, 0, 1, 0, 0},
+                {1, 1, 0, 1, 0},
+                {0, 0, 1, 0, 1},
+                {0, 0, 0, 1, 0}};
+
+        int[] salida = ColoreoSecuencial.colorear(grafo_para_colorear);
+        Assert.assertArrayEquals(new int[] {0, 1, 2, 0, 1}, salida);
+
+
+    }
 }

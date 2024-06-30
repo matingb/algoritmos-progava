@@ -18,8 +18,6 @@ public class ColoreoSecuencial {
 		int[] coloreoNodos = new int[m.length];
 		Arrays.fill(coloreoNodos, -1);	// Inicializo el vector de coloreo con todos los valores en -1
 		
-		Collections.shuffle(listaNodos); // Mezclo los nodos aleatoriament
-		
 		for(int iteradorNodos = 0; iteradorNodos < listaNodos.size(); iteradorNodos++) { // Itero sobre los nodos
 			int nodoPintar = listaNodos.get(iteradorNodos);	// Selecciono un nodo de la lista ordenada aleatoriamente
 			

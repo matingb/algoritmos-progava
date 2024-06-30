@@ -26,9 +26,6 @@ public class Main {
                                         {1, 1, 0, 1, 0},
                                         {0, 0, 1, 0, 1},
                                         {0, 0, 0, 1, 0}};
-        /*
-        int[] coloreo = ColoreoSecuencial.colorear(grafo_para_colorear);
-        System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));*/
         
         int[] coloreo = ColoreoWelshPowell.colorear(grafo_para_colorear);
         System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));
