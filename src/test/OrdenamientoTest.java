@@ -35,6 +35,16 @@ public class OrdenamientoTest {
 
         Assert.assertArrayEquals(vector, new int[]{-5, -4, 1, 2, 5, 6, 8, 9, 15});
     }
+    
+    @Test
+    public void ShellSort() {
+        char[] lista = {'a', 's', 'o', 'r', 't', 'i', 'n', 'g', 'e', 'x', 'a', 'm', 'p', 'l', 'e'};
+
+        ShellSort shell = new ShellSort();
+        shell.ordenar(lista);
+
+        Assert.assertArrayEquals(lista, new char[]{'a', 'a','e', 'e', 'g', 'i', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'x'});
+    }
 
     @Test
     public void quicksort() {

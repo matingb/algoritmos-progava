@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 public class ShellSort {
     public void ordenar(char[] lista) {
-        //ALGORITMO DE SHELL
-        //char[] lista = {'a', 's', 'o', 'r', 't', 'i', 'n', 'g', 'e', 'x', 'a', 'm', 'p', 'l', 'e'};
 
         int n = lista.length;
         int h = 1;
