@@ -49,6 +49,24 @@ public class GrafosTest {
     }
 
     @Test
+    public void Warshall() {
+
+        boolean[][] grafoBooleano = {
+                {false, true ,true},
+                {true, false, false},
+                {false, true, false}};
+
+
+        boolean[][] salidaMatrizFloyd = Warshall.warshall(grafoBooleano);
+        boolean[][] esperadaMatrizFloyd = {
+                {false, true ,true},
+                {true, false, true},
+                {true, true, false}};
+
+        Assert.assertEquals(esperadaMatrizFloyd, salidaMatrizFloyd);
+    }
+
+    @Test
     public void DFS() {
 
         int[][] grafo_para_dfs = {
