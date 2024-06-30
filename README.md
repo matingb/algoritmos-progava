@@ -12,7 +12,7 @@ En este repositorio podrá encontrar los siguientes algoritmos:
   - Prim
   - Warshall
 
-* algoritmos/src/main/Ordenamiento
+* src/main/Ordenamiento
   -  Burbujeo
   -  Insercion
   -  Seleccion
