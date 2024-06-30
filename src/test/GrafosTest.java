@@ -130,6 +130,42 @@ public class GrafosTest {
 
         Assert.assertArrayEquals(new int[] {0, 1, 2, 0, 1, 2, 0}, salida);
     }
+    
+    @Test
+    public void ColoreoWelshPowell() {
+
+        int[][] grafo_para_colorear = { 
+        		{0, 1, 0, 0, 0, 0, 0},
+                {1, 0, 1, 0, 0, 1, 0},
+                {0, 1, 0, 1, 0, 0, 0},
+                {0, 0, 1, 0, 1, 0, 0},
+                {0, 0, 0, 1, 0, 1, 0},
+                {0, 1, 0, 0, 1, 0, 1},
+                {0, 0, 0, 0, 0, 1, 0}
+        };
+        
+        int[] salida = ColoreoWelshPowell.colorear(grafo_para_colorear);
+
+        Assert.assertArrayEquals(new int[] {1, 0, 1, 0, 2, 1, 0}, salida);
+    }
+    
+    @Test
+    public void ColoreoMatula() {
+
+        int[][] grafo_para_colorear = { 
+        		{0, 1, 0, 0, 0, 0, 0},
+                {1, 0, 1, 0, 0, 1, 0},
+                {0, 1, 0, 1, 0, 0, 0},
+                {0, 0, 1, 0, 1, 0, 0},
+                {0, 0, 0, 1, 0, 1, 0},
+                {0, 1, 0, 0, 1, 0, 1},
+                {0, 0, 0, 0, 0, 1, 0}
+        };
+        
+        int[] salida = ColoreoMatula.colorear(grafo_para_colorear);
+
+        Assert.assertArrayEquals(new int[] {0, 1, 0, 1, 0, 2, 0}, salida);
+    }
 
     @Test
     public void KruskalTest() {
