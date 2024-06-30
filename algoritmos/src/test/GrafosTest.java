@@ -30,6 +30,25 @@ public class GrafosTest {
     }
 
     @Test
+    public void Floyd() {
+
+        int[][] grafo_ponderado = {{Infinito.INFINITO, 3, 5, Infinito.INFINITO},
+                {Infinito.INFINITO, Infinito.INFINITO, 1, 4},
+                {9, 5, Infinito.INFINITO, Infinito.INFINITO},
+                {3, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO}};
+
+
+        int[][] salidaMatrizFloyd = Floyd.floyd(grafo_ponderado);
+        int[][] esperadaMatrizFloyd = {
+                {0, 3, 4, 7},
+                {7, 0, 1, 4},
+                {9, 5, 0, 9},
+                {3, 6, 7, 0}};
+
+        Assert.assertEquals(esperadaMatrizFloyd, salidaMatrizFloyd);
+    }
+
+    @Test
     public void DFS() {
 
         int[][] grafo_para_dfs = {
@@ -75,7 +94,5 @@ public class GrafosTest {
 
         int[] salida = ColoreoSecuencial.colorear(grafo_para_colorear);
         Assert.assertArrayEquals(new int[] {0, 1, 2, 0, 1}, salida);
-
-
     }
 }

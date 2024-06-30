@@ -38,7 +38,7 @@ public class ColoreoSecuencial {
 			}
 			coloreoNodos[nodoPintar] = color;	// Pinto el nodo
 		}
-		
+
 		return coloreoNodos;
 	}
 }

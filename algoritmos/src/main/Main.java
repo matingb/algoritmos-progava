@@ -14,13 +14,9 @@ public class Main {
         Sumar sumar = new Sumar();
         sumar.calcular(elementos);*/
 
-        /*
-            // Ejecucion Floyd
-        int[][] matrizFloyd = Floyd.floyd(grafo_ponderado);
-        System.out.println("La matriz de costos minimos obtenida por Floyd es: \n");
-        Matriz.imprimirMatriz(matrizFloyd);
-        */
+
         
+
         int[][] grafo_para_colorear = { {0, 1, 1, 0, 0},
                                         {1, 0, 1, 0, 0},
                                         {1, 1, 0, 1, 0},
@@ -29,7 +25,6 @@ public class Main {
         
         int[] coloreo = ColoreoWelshPowell.colorear(grafo_para_colorear);
         System.out.println("El coloreo resultante es:" + Arrays.toString(coloreo));
-
     }
 
 
