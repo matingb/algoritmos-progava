@@ -60,7 +60,7 @@ public class GrafosTest {
 
         DFS.calcular(grafo_para_dfs, 2, nodo -> {
             Assert.assertEquals(nodo, esperados.get(0));
-            esperados.removeFirst();
+            esperados.remove(0);
         });
     }
 
@@ -86,13 +86,17 @@ public class GrafosTest {
     @Test
     public void ColoreoSecuencial() {
 
-        int[][] grafo_para_colorear = { {0, 1, 1, 0, 0},
-                {1, 0, 1, 0, 0},
-                {1, 1, 0, 1, 0},
-                {0, 0, 1, 0, 1},
-                {0, 0, 0, 1, 0}};
+        int[][] grafo_para_colorear = { {0, 1, 1, 0, 0, 1, 0},
+                {1, 0, 1, 0, 0, 1, 0},
+                {1, 1, 0, 1, 0, 0, 0},
+                {0, 0, 1, 0, 1, 0, 0},
+                {0, 0, 0, 1, 0, 1, 0},
+                {1, 1, 0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0}
+        };
 
         int[] salida = ColoreoSecuencial.colorear(grafo_para_colorear);
-        Assert.assertArrayEquals(new int[] {0, 1, 2, 0, 1}, salida);
+
+        Assert.assertArrayEquals(new int[] {0, 1, 2, 0, 1, 2, 0}, salida);
     }
 }
