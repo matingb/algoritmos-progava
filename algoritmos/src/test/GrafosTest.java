@@ -5,7 +5,6 @@ import main.Grafos.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GrafosTest {
@@ -28,6 +27,22 @@ public class GrafosTest {
 
         Assert.assertEquals(arbolCostoMinimo.getAristas(), aristasEsperadas);
         Assert.assertEquals(arbolCostoMinimo.getCostoTotal(), 8);
+    }
+
+    @Test
+    public void DFS() {
+
+        int[][] grafo_para_dfs = {
+                {0, 1, 0, 0},
+                {1, 0, 1, 0},
+                {0, 1, 0, 1},
+                {0, 0, 1, 0}};
+        List<String> esperados = new java.util.ArrayList<>(List.of("2", "3", "1", "0"));
+
+        DFS.calcular(grafo_para_dfs, 2, nodo -> {
+            Assert.assertEquals(nodo, esperados.get(0));
+            esperados.removeFirst();
+        });
     }
 
     @Test

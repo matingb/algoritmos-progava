@@ -20,18 +20,6 @@ public class Main {
         System.out.println("La matriz de costos minimos obtenida por Floyd es: \n");
         Matriz.imprimirMatriz(matrizFloyd);
         */
-
-//<<<<<<< HEAD:algoritmos/src/Main.java
-/*        int[][] grafo_para_dfs = {
-=======
-        /*int[][] grafo_para_dfs = {
->>>>>>> bf45a087a5c9a07a991f6430b754e626db1d73e7:algoritmos/src/main/Main.java
-                {0, 1, 0, 0},
-                {1, 0, 1, 0},
-                {0, 1, 0, 1},
-                {0, 0, 1, 0}};
-        DFS.calcular(grafo_para_dfs, 2, nodo -> System.out.println("Nodo visitado: " + nodo));*/
-
         
         int[][] grafo_para_colorear = { {0, 1, 1, 0, 0},
                                         {1, 0, 1, 0, 0},
