@@ -1,8 +1,6 @@
 package test;
 
-import main.Ordenamiento.Burbujeo;
-import main.Ordenamiento.MergeSort;
-import main.Ordenamiento.QuickSort;
+import main.Ordenamiento.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,6 +14,26 @@ public class OrdenamientoTest {
         burbujeo.ordenar(vector);
 
         Assert.assertArrayEquals(vector, new Integer[]{-5, -4, 1, 2, 5, 6, 8, 9, 15});
+    }
+
+    @Test
+    public void insercion() {
+        int[] vector = {5, 2, 9, 1, -5, 6, 8, 15, -4};
+
+        Insercion insercion = new Insercion();
+        insercion.ordenar(vector);
+
+        Assert.assertArrayEquals(vector, new int[]{-5, -4, 1, 2, 5, 6, 8, 9, 15});
+    }
+
+    @Test
+    public void Seleccion() {
+        int[] vector = {5, 2, 9, 1, -5, 6, 8, 15, -4};
+
+        Seleccion seleccion = new Seleccion();
+        seleccion.ordenar(vector);
+
+        Assert.assertArrayEquals(vector, new int[]{-5, -4, 1, 2, 5, 6, 8, 9, 15});
     }
 
     @Test
