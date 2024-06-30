@@ -2,6 +2,7 @@ package main.Ordenamiento;
 
 public class TimSort {
     private static final int RUN = 32;
+
     private void insertar(int[] lista, int izq, int der){
         for (int i = izq +1 ; i <= der; i++) {
             int temp = lista[i];
@@ -10,7 +11,7 @@ public class TimSort {
                 lista[j+1] = lista[j];
                 j--;
             }
-            lista[j-1] = temp;
+            lista[j+1] = temp;
         }
     }
     private void merge(int[] lista, int izq, int medio, int der){
