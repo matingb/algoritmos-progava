@@ -5,6 +5,9 @@ import main.Grafos.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class GrafosTest {
@@ -104,7 +107,8 @@ public class GrafosTest {
     @Test
     public void ColoreoSecuencial() {
 
-        int[][] grafo_para_colorear = { {0, 1, 1, 0, 0, 1, 0},
+        int[][] grafo_para_colorear = { 
+        		{0, 1, 1, 0, 0, 1, 0},
                 {1, 0, 1, 0, 0, 1, 0},
                 {1, 1, 0, 1, 0, 0, 0},
                 {0, 0, 1, 0, 1, 0, 0},
@@ -112,8 +116,17 @@ public class GrafosTest {
                 {1, 1, 0, 0, 1, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0}
         };
-
-        int[] salida = ColoreoSecuencial.colorear(grafo_para_colorear);
+        
+        ArrayList <Integer> listaOrdenNodos = new ArrayList <Integer> (grafo_para_colorear.length);
+        listaOrdenNodos.add(0);
+        listaOrdenNodos.add(1);
+        listaOrdenNodos.add(2);
+        listaOrdenNodos.add(3);
+        listaOrdenNodos.add(4);
+        listaOrdenNodos.add(5);
+        listaOrdenNodos.add(6);
+        
+        int[] salida = ColoreoSecuencial.colorear(grafo_para_colorear, listaOrdenNodos);
 
         Assert.assertArrayEquals(new int[] {0, 1, 2, 0, 1, 2, 0}, salida);
     }

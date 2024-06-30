@@ -8,33 +8,9 @@ public class ColoreoWelshPowell {
 
 	public static int[] colorear(int[][] m) {
 		
-		ArrayList<Integer> listaNodos = ordenoPorGradoDescendente(m);
+		ArrayList<Integer> listaNodosOrdenDescendente = ordenoPorGradoDescendente(m); // Llama al metodo que ordena los nodos segun su grado de forma descendente
 		
-		int[] coloreoNodos = new int[m.length];
-		Arrays.fill(coloreoNodos, -1);	// Inicializo el vector de coloreo con todos los valores en -1
-		
-		for(int iteradorNodos = 0; iteradorNodos < listaNodos.size(); iteradorNodos++) { // Itero sobre los nodos
-			int nodoPintar = listaNodos.get(iteradorNodos);	// Selecciono un nodo de la lista ordenada aleatoriamente
-			
-			int color = 0;	// Colores que irán utilizando para colorear
-			int ultimoNodoPintado = iteradorNodos -1;
-			
-			int iteradorNodoPintado = 0;
-			while (iteradorNodoPintado <= ultimoNodoPintado) {	// Itero sobre los nodos pintados
-				
-				int nodoPintado = listaNodos.get(iteradorNodoPintado);
-				
-				if(m[nodoPintar][nodoPintado] != 0 && coloreoNodos[nodoPintado] == color) {	// Verifico si son compatibles
-					color++;
-					iteradorNodoPintado = -1;
-				}
-				
-				iteradorNodoPintado++;
-			}
-			coloreoNodos[nodoPintar] = color;	// Pinto el nodo
-		}
-		
-		return coloreoNodos;
+		return ColoreoSecuencial.colorear(m, listaNodosOrdenDescendente); // Utiliza la funcion de coloreo con el ordenamiento obtenido
 	}
 	
 	private static ArrayList<Integer> ordenoPorGradoDescendente (int[][] m){
@@ -72,7 +48,6 @@ public class ColoreoWelshPowell {
 		ArrayList <Integer> nodosOrdenadosPorGrado = new ArrayList <> (m.length); // lista con el orden final
 		
 		for (ArrayList <Integer> listaGradoActual : listaDeListasPorGrado) {
-			Collections.shuffle(listaGradoActual); // Mezcla aleatoria entre los nodos que pertenecen a la misma lista segun su grado
 			for (int nodoActual : listaGradoActual)
 				nodosOrdenadosPorGrado.add(nodoActual); // Agregar nodos a la lista con el orden final
 		}
