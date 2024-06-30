@@ -5,23 +5,21 @@ import java.util.PriorityQueue;
 
 public class Prim {
 
-	public static ArrayList<Arista> calcularArbolMinimo(int[][] m) {
+	public static Grafo calcularArbolMinimo(int[][] m) {
+		Grafo arbolDeCostoMinimo = new Grafo();
 		PriorityQueue<Arista> colaPrioridad = new PriorityQueue<>();
-
-		ArrayList<Arista> conjuntoAristasSolucion = new ArrayList<Arista>(m.length);
 
 		ArrayList<Integer> conjuntoSolucion = new ArrayList<Integer>(m.length);
 		ArrayList<Integer> conjuntoInicial = new ArrayList<Integer>(m.length);
 
 		for (int i = 0; i < m.length; i++) {
 			conjuntoInicial.add(i + 1);
-
 		}
 
 		int nodoAnalizado = conjuntoInicial.get(0);
 		conjuntoSolucion.add(conjuntoInicial.get(0)); // agrego el primer elemento al conjunto solucion
 
-		conjuntoInicial.removeAll(conjuntoSolucion); // saco del conjunto inicial todo lo del conjunto solucion
+		conjuntoInicial.removeAll(conjuntoSolucion);
 
 		int nuevoNodo;
 		while (!conjuntoInicial.isEmpty()) {
@@ -45,12 +43,14 @@ public class Prim {
 				conjuntoSolucion.add(aristaMinima.fin);
 			}
 
-			conjuntoAristasSolucion.add(aristaMinima);
+			arbolDeCostoMinimo.agregarArista(aristaMinima);
+
 			nodoAnalizado = nuevoNodo;
 
 			conjuntoInicial.remove(conjuntoInicial.indexOf(nuevoNodo));
 		}
 
-		return conjuntoAristasSolucion;
+
+		return arbolDeCostoMinimo;
 	}
 }

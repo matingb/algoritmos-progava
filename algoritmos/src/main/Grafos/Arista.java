@@ -1,6 +1,7 @@
 package main.Grafos;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Arista implements Comparable<Arista>{
 	
@@ -12,12 +13,12 @@ public class Arista implements Comparable<Arista>{
 		this.costo = costo;
 	}
 
-	public static int sumarCostos(ArrayList<Arista> aristas) {
-		int suma = 0;
-		for (Arista arista : aristas) {
-			suma += arista.costo;
-		}
-		return suma;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Arista arista = (Arista) o;
+		return inicio == arista.inicio && fin == arista.fin && costo == arista.costo;
 	}
 
 	@Override
