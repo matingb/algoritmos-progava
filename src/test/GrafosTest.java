@@ -117,4 +117,39 @@ public class GrafosTest {
 
         Assert.assertArrayEquals(new int[] {0, 1, 2, 0, 1, 2, 0}, salida);
     }
+
+    @Test
+    public void KruskalTest() {
+        Grafo grafo = new Grafo();
+        grafo.agregarArista(new Arista(0, 1, 10));
+        grafo.agregarArista(new Arista(0, 2, 6));
+        grafo.agregarArista(new Arista(0, 3, 5));
+        grafo.agregarArista(new Arista(1, 3, 15));
+        grafo.agregarArista(new Arista(2, 3, 4));
+
+
+        Kruskal kruskal = new Kruskal();
+        Grafo mstGrafo = kruskal.obtenerArbolDeCostoMinimo(grafo);
+
+        Grafo grafoEsperado = new Grafo();
+        grafoEsperado.agregarArista(new Arista(2, 3, 4));
+        grafoEsperado.agregarArista(new Arista(0, 3, 5));
+        grafoEsperado.agregarArista(new Arista(0, 1, 10));
+
+        assertTrue(sonGrafosIguales(mstGrafo, grafoEsperado));
+
+    }
+
+    private boolean sonGrafosIguales(Grafo grafo1, Grafo grafo2) {
+        if (grafo1.getAristas().size() != grafo2.getAristas().size()) {
+            return false;
+        }
+        for (Arista arista : grafo1.getAristas()) {
+            if (!grafo2.getAristas().contains(arista)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
+
