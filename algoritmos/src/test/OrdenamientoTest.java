@@ -53,6 +53,13 @@ public class OrdenamientoTest {
         mergeSort.ordenar(lista);
         Assert.assertArrayEquals(lista, new int[]{8, 10, 23, 34, 38, 54, 99});
     }
-
+    
+    @Test
+    public void timSort(){
+        int [] lista = {38,23,54,99,10,8,34};
+        TimSort timSort = new TimSort();
+        timSort.ordenar(lista);
+        Assert.assertArrayEquals(lista, new int[]{8, 10, 23, 34, 38, 54, 99});
+    }
 
 }
