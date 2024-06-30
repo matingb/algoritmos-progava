@@ -23,32 +23,7 @@ public class Main {
                 {9, 5, Infinito.INFINITO, Infinito.INFINITO},
                 {3, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO}};
 */
-    	
-    	
-    	/*
-    	//Ejecución BFS
-    	
-    	int[][] grafo = {
-                {Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO},
-                {1, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO},
-                {Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, 1, Infinito.INFINITO},
-                {Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO},
-                {Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO},
-                {1, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, 1, Infinito.INFINITO, Infinito.INFINITO},
-                {Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO}
-            };
 
- 
-    	int[] d= BFS.bfs(grafo, 0);
-    	
-    	for(int i=0; i < grafo.length; i++) {
-    		System.out.println(d[i] + " ");
-    	}
-    	*/
-        
-        
-        
-        
         /*
             // Ejecucion Prim
         ArrayList<Arista> arbolCostoMinimo = Prim.calcularArbolMinimo(grafo_ponderado);
