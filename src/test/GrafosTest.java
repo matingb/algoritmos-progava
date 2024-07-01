@@ -21,9 +21,14 @@ public class GrafosTest {
                 {Infinito.INFINITO, Infinito.INFINITO, 20, Infinito.INFINITO, 60},
                 {Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO}};
                 
-    	int[] costos= Dijkstra.dijkstra(grafo_ponderado, 0);
+    	ResultadoDijkstra resultado= Dijkstra.dijkstra(grafo_ponderado, 0);
     	
-    	Assert.assertArrayEquals(costos, new int[]{0, 10, 50, 30, 60});
+    	List<Integer> caminoReconstruidoEsperado = List.of(0, 3, 2, 4);
+    	
+    	Assert.assertArrayEquals(new int[]{0, 10, 50, 30, 60}, resultado.getCostos());
+    	Assert.assertArrayEquals(new int[]{0, 0, 3, 0, 2}, resultado.getCaminos());
+    	Assert.assertEquals(caminoReconstruidoEsperado, resultado.reconstruirCamino(4));
+    	
     }
 	
 	@Test
@@ -42,8 +47,8 @@ public class GrafosTest {
                 new Arista(2,3,1),
                 new Arista(2,4,4));
 
-        Assert.assertEquals(arbolCostoMinimo.getAristas(), aristasEsperadas);
-        Assert.assertEquals(arbolCostoMinimo.getCostoTotal(), 8);
+        Assert.assertEquals(aristasEsperadas, arbolCostoMinimo.getAristas());
+        Assert.assertEquals(8, arbolCostoMinimo.getCostoTotal());
     }
 
     @Test
@@ -115,7 +120,7 @@ public class GrafosTest {
 
         int[] d = BFS.bfs(grafo, 0);
 
-        Assert.assertArrayEquals(d, new int[]{0, 1, 2, 2, 1, 3, Infinito.INFINITO });
+        Assert.assertArrayEquals(new int[]{0, 1, 2, 2, 1, 3, Infinito.INFINITO }, d);
     }
 
     @Test
