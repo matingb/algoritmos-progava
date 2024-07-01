@@ -14,7 +14,7 @@ public class Dijkstra {
         costos[nodoInicial] = 0;
         
   
-		for (int i = 1; i < cantNodos; i++) {
+		for (int i = 0; i < cantNodos; i++) {
 			
             int w= -1;
             int costoMin = Infinito.INFINITO;
@@ -33,7 +33,7 @@ public class Dijkstra {
             for (int nodoAdy = 0; nodoAdy < cantNodos; nodoAdy++) {
                 int costoIndirecto= matrizDeAdyacencia[w][nodoAdy];
                 
-                if (!visitados[nodoAdy] && ((costoMin + costoIndirecto) < costos[nodoAdy])) {
+                if (!visitados[nodoAdy] && costoIndirecto != Infinito.INFINITO && ((costoMin + costoIndirecto) < costos[nodoAdy])) {
                     costos[nodoAdy] = costoMin + costoIndirecto;
                 }
             }

@@ -13,6 +13,20 @@ import java.util.List;
 public class GrafosTest {
 
     @Test
+    public void Dijkstra() {
+    	
+    	int[][] grafo_ponderado= {{Infinito.INFINITO, 10, Infinito.INFINITO, 30, 100},
+                {Infinito.INFINITO, Infinito.INFINITO, 50, Infinito.INFINITO, Infinito.INFINITO},
+                {Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, 10},
+                {Infinito.INFINITO, Infinito.INFINITO, 20, Infinito.INFINITO, 60},
+                {Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO, Infinito.INFINITO}};
+                
+    	int[] costos= Dijkstra.dijkstra(grafo_ponderado, 0);
+    	
+    	Assert.assertArrayEquals(costos, new int[]{0, 10, 50, 30, 60});
+    }
+	
+	@Test
     public void Prim() {
 
         int[][] grafo_ponderado = {{Infinito.INFINITO, 3, 5, Infinito.INFINITO},
